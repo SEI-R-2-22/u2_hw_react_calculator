@@ -15,6 +15,7 @@ creative.
 - Like usual, use `npx create-react-app simple-calculator` to make a new project.
 - `cd` into your new React app
 - Create a `components` folder within the `src` directory to store any components we'll create in this deliverable
+- `npm start` to start up your new React app
 
 
 ## Instructions
@@ -28,7 +29,9 @@ Start by replacing `App.js` with this component structure:
     render() {
       return (
         <div className="App">
-
+          <h1>Add With React!</h1>
+          
+          // Your <Calculator /> component here
         </div>
       );
     }
@@ -46,14 +49,16 @@ Next we'll by create a single `Class` component file in the `components` directo
 
 ```html
 <div className="container">
-  <h1>React Calculator!</h1>
 
   <div className="add">
+    
     <input type="text" />
     <span>+</span>
     <input type="text" />
     <button>=</button>
+    
     <h3>Addition results go here!</h3>
+    
   </div>
   
 </div>
