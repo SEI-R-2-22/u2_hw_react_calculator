@@ -47,7 +47,7 @@ Next we'll by create a single `Class` component file in the `components` directo
 - In this file, create your `Calculator` class component. 
 -  Add the following JSX to the return of your Calculator's `render()` function:
 
-```html
+```jsx
 <div className="container">
   <div className="add">    
     <input type="text" />
@@ -151,7 +151,7 @@ Set up the initial state of your `Calculator` component with a `constructor()` m
 ### Step 3
 You will want to trigger a function when the values in your textboxes change. You can capture these values by setting a function (a method in your `Class` component) to fire within an anonymous function `() =>` in the input's `onChange` property. Let's say I have a text input tracking my first number.
 
-```
+```jsx
 <input type="number"
   name="num1"
   placeholder="Enter your first number"
@@ -162,7 +162,7 @@ You will want to trigger a function when the values in your textboxes change. Yo
 
 I want to store this number as part of my state. Let's say I decided to call it `num1`. Within a method that I've defined in my `Class` component above the `render()` method callsed `setNum`, I could set my state like so:
 
-```
+```js
 setNum = (e, num) => {
   this.setState({ [num]: e.target.value});
 }
