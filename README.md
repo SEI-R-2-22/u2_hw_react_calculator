@@ -14,18 +14,39 @@ creative.
 - `Fork` and `clone` this repository and `cd` into the new directory
 - Like usual, use `npx create-react-app simple-calculator` to make a new project.
 - `cd` into your new React app
+- Create a `components` folder within the `src` directory to store any components we'll create in this deliverable
 
 
 ## Instructions
 ### Step 1
-Start by creating a single component file in the `src` directory, and name it
-`Calculator.js`. In this file, create your `Calculator` class. Use the `App.js`
-as an example of how to create a basic component. Add the following JSX to your Calculator's
-`render()` function:
+Start by replacing `App.js` with this component structure:
+```js
+  import React, { Component } from 'react';
+  import './App.css';
+
+  class App extends Component {
+    render() {
+      return (
+        <div className="App">
+
+        </div>
+      );
+    }
+  }
+  
+  export default App;
+```
+
+
+Next we'll by create a single `Class` component file in the `components` directory, and name it
+`Calculator.js`. 
+
+- In this file, create your `Calculator` class component. 
+-  Add the following JSX to the return of your Calculator's `render()` function:
 
 ```html
 <div className="container">
-  <h1>Add with React!</h1>
+  <h1>React Calculator!</h1>
 
   <div className="add">
     <input type="text" />
@@ -34,6 +55,7 @@ as an example of how to create a basic component. Add the following JSX to your 
     <button>=</button>
     <h3>Addition results go here!</h3>
   </div>
+  
 </div>
 ```
 
