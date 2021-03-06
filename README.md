@@ -1,4 +1,4 @@
-# React Calculator
+# React Calculator With Hooks
 
 ![calc](https://cdn.dribbble.com/users/2184773/screenshots/4516857/calculator.gif)
 
@@ -26,16 +26,17 @@ creative.
 Start by replacing `App.js` with this component structure:
 
 ```js
-  import './App.css';
-  function App(){
-    return ()
+import './App.css'
+function App() {
+  return (
     <div className="App">
-          <h1>Add With React!</h1>
+      <h1>Add With React!</h1>
 
-          Your <Calculator /> component here
-        </div>
-  }
-  export default App;
+      {/* Your <Calculator /> component here */}
+    </div>
+  )
+}
+export default App
 ```
 
 Next we'll by create a single `functional` component file in the `components` directory, and name it
