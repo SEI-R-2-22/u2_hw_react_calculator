@@ -14,7 +14,7 @@ creative.
 ## Getting Started
 
 - `Fork` and `clone` this repository and `cd` into the new directory
-- Like usual, use `npx create-react-app simple-calculator` to make a new project.
+- Like usual, use `npx create-react-app hooks-calculator` to make a new project.
 - `cd` into your new React app
 - Create a `components` folder within the `src` directory to store any components we'll create in this deliverable
 - `npm start` to start up your new React app
@@ -42,15 +42,15 @@ export default App
 Next we'll by create a single `functional` component file in the `components` directory, and name it
 `Calculator.js`.
 
-- In this file, create your `Calculator` class component.
+- In this file, create your `Calculator` as a functional component.
 - Add the following JSX to the return of your Calculator component:
 
 ```jsx
 <div className="container">
   <div className="add">
-    <input type="text" />
+    <input type="text" placeholder="Enter a number" />
     <span>+</span>
-    <input type="text" />
+    <input type="text" placeholder="Enter a number" />
     <button>=</button>
   </div>
   <h3 className="results">Addition results go here!</h3>
@@ -150,11 +150,11 @@ Set up the initial state of your `Calculator` component with `useState`. Don't f
 - What values should those state items start with?
 - Where is that state displayed in the browser?
 
-> Hint: Think about creating state key value pairs for the first number, second number, and result to start.
+> Hint: Think about creating state variables for the first number, second number, and result to start. An empty string `""` might be a good place to start, since we're using 'text' inputs for our numbers.
 
 ### Step 3
 
-You will want to trigger a function when the values in your textboxes change. You can capture these values by setting a function (a method in your `Class` component) to fire within an anonymous function `() =>` in the input's `onChange` property. Let's say I have a text input tracking my first number.
+You will want to trigger a function when the values in your text inputs change. You can capture these values by writing a function in your `Calaculator` component that fires within an anonymous function `() =>` in the input's `onChange` property. Let's say I have a text input tracking my first number.
 
 ```jsx
 <input
@@ -162,19 +162,27 @@ You will want to trigger a function when the values in your textboxes change. Yo
   name="num1"
   placeholder="Enter your first number"
   value={someStateVariable}
-  onChange={(e) => setNum(e, 'num1')}
+  onChange={(e) => handleNum(e, 'num1')}
 />
 ```
 
-I want to store this number as part of my state. Let's say I decided to call it `num1`. Within a method that I've defined in my `Class` component above the `render()` method callsed `setNum`, I could set my state like so:
+I want to store this number as part of my state. Let's say I decided to call it `num1`. Within the function that I've defined in my `Calculator` component above the return I could set my state like so:
 
 ```js
-setNum = (e, num) => {
-  someStateFunction({ ...someState, [num]: e.target.value })
+const handleNum = (e, num) => {
+  console.log(num)
+  console.log(e.target.value)
+  // CONDITION
+  // If num is num1:
+  //   set num1 to e.target.value
+  // Otherwise
+  //   set num2 to e.target.value
 }
 ```
 
-> Hint: The [] brackets are there so we can use a dynamic key value! This value becomes `num1` or `num2` depending on what was clicked and sent to the function from the second argument of the input's `onChange`.
+> Hint: Remember to use proper state setting functions for state variables. 
+>
+> For example, if I had a useState() variable `const [result, setResult] = useState('')`, I would update its state with something like the following: `setResult(someNewStringValue)`
 
 If you decided to use buttons for your calculator, you probably want to use `onClick` instead of `onChange`, but the concepts are the same! Here is some additional documentation on React's forms and event handling:
 
@@ -183,20 +191,27 @@ If you decided to use buttons for your calculator, you probably want to use `onC
 
 ### Step 4
 
-Once you've got your event handlers set up to capture the input, you'll need to create a
-method for your submit button. The method should:
+Once you've got your event handlers set up to capture the nubmers from your **text** inputs, you'll need to create function that calculates the final result when the `=` button is clicked. Example:
 
-- Accept the triggered event
-- Get the input values from your state
-- Add them together and set part of the state to the new `result`.
-- Clear the state of the input values
+```js
+const handleSolution = () => {
+// If num1 and num2 are not empty strings 
+//   here would be a good place to:
+//   declare a variable equal to the arithmetic sum of num1 and num2
+//   since they are strings, a method like parseInt() may be useful here
+//   set the state of the result to the arithmetic sum of num1 and num2
 
-<details>
-  <summary>Hint: Where should this method go?</summary>
-  <p>In the same component as it's being used - between the constructor and the render.</p>
-</details>
+// After setting the result state, you could clear the state of num1 and num2
+// by setting them back to empty strings
 
-> Thought: How will you handle inputs that aren't numbers? If you're using text inputs, maybe a `parseInt()` would be useful somewhere.
+// If you want to continue using the result that was just calculated above
+// Maybe you could just clear num2
+// And set the state of num1 to the result that was just calculated
+
+...
+<button onClick={() => handleSolution()}>=</button>
+}
+```
 
 ### Step 5
 
@@ -204,16 +219,16 @@ Once the state of the `result` has been set, React will re-render the whole
 component. Make sure you have a place in your JSX that displays the result!
 
 ## Requirements
-
 - `state` used with `useState` to create the initial state for the `Calculator` component
-- Numbers from both inputs must be added _arithmetically_, not as joined strings
+- Numbers must both come from **text inputs** and be added _arithmetically_, not as joined strings
 - A result from both numbers being added together must display on the page after the `=` button is clicked
-- The result must be equal to the sum of both numbers from the input
+- The result must be equal to the sum of both numbers from the text inputs
 
 ## Bonus
-
-- Make the calculator work with any of the 4 basic arithmetic operations (`+`, `-`, `*`, `/`).
-- How will this change your `state` and your JSX?
+- Add in logic that prevents the solution from being calculated if users do not enter a number in the text inputs
+- Make the calculator work with any of the 4 basic arithmetic operations (`+`, `-`, `*`, `/`). 
+- How will this change your `state` and your JSX? HINT: A state variable for an `operator` may be useful here.
+- Try implementing a solution _without_ a `useState` variable for the result, using only the two number states.
 
 ## Submission Guidelines
 
