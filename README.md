@@ -232,10 +232,10 @@ component. Make sure you have a place in your JSX that displays the result!
 
 ## Submission Guidelines
 
-- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-1-25/template_pull_request)
+- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-4-26/template_pull_request)
 
 ## Resources
 
-- [React State Intro Lesson](https://github.com/SEI-R-1-25/u2_lesson_react_state_intro)
-- [React Todo List Lab](https://github.com/SEI-R-1-25/u2_lab_react_todos)
-- [React Lifecycle Methods Lesson](https://github.com/SEI-R-1-25/u2_lesson_react_lifecycle)
+- [React State Intro Lesson](https://github.com/SEI-R-4-26/u2_lesson_react_state_intro)
+- [React Todo List Lab](https://github.com/SEI-R-4-26/u2_lab_react_todos)
+- [React Lifecycle Methods Lesson](https://github.com/SEI-R-4-26/u2_lesson_react_lifecycle)
