@@ -10,37 +10,17 @@ At first, your calculator will just add 2 numbers together when they are typed i
 
 ## Getting Started
 
-- `Fork` and `clone` this repository and `cd` into the new directory
-- Use `npx create-react-app hooks-calculator` to make a new project.
-- `cd` into your new React app
-- Create a `components` folder within the `src` directory to store any components we'll create in this deliverable
-- `npm start` to start up your new React app
+- `Fork` and `clone` this repository
+- `cd` into the new directory
+- `npm i` to install our dependencies
+- `npm start` to spin up our app
 
 ## Instructions
 
 ### Step 1
 
-Start by replacing `App.js` with this component structure:
-
-```js
-import './App.css'
-function App() {
-  return (
-    <div className="App">
-      <h1>Add With React!</h1>
-
-      {/* Your <Calculator /> component here */}
-    </div>
-  )
-}
-export default App
-```
-
-Next we'll by create a single `functional` component file in the `components` directory, and name it
-`Calculator.js`.
-
-- In this file, create your `Calculator` as a functional component.
-- Add the following JSX to the return of your Calculator component:
+- In the **Calculator.jsx** file, create your `Calculator` as a functional component.
+- Add the following **JSX** to the *return* of your Calculator component:
 
 ```jsx
 <div className="container">
@@ -50,98 +30,15 @@ Next we'll by create a single `functional` component file in the `components` di
     <input type="text" placeholder="Enter a number" />
     <button>=</button>
   </div>
-  <h3 className="results">Addition results go here!</h3>
+  <h3 className="results">Results go here!</h3>
 </div>
 ```
-
-- If you want a quick CSS snippet to make your app more visible, you can find it here:
-- <details><summary>App.css</summary>
-
-  ```css
-  body {
-    background-color: rgb(136, 255, 182);
-  }
-
-  .App {
-    text-align: center;
-  }
-
-  input,
-  button {
-    border: none;
-    font-size: 1.2em;
-    border-radius: 0.25em;
-    padding: 0.5em;
-    outline: none;
-  }
-
-  button,
-  h1 {
-    background-color: rgb(37, 37, 37);
-    color: white;
-    font-weight: bold;
-    box-shadow: 0px 0px 5px black;
-  }
-
-  button:active {
-    box-shadow: none;
-  }
-
-  input:focus {
-    box-shadow: inset 0px 0px 6px rgb(175, 0, 73);
-  }
-
-  input {
-    box-shadow: inset 0px 0px 3px black;
-    width: 8em;
-  }
-
-  h1 {
-    padding: 0.5em;
-    margin-top: 0;
-    margin-bottom: 2em;
-  }
-
-  button {
-    padding: 0.5em 1.5em;
-  }
-
-  .add {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .add > span {
-    font-size: 2em;
-    font-weight: bold;
-  }
-
-  .container {
-    width: 30em;
-    margin: 0 auto;
-    background-color: rgb(173, 208, 255);
-    padding: 2em;
-    border-radius: 0.5em;
-    box-shadow: 0px 0px 5px black;
-  }
-
-  .results {
-    background-color: white;
-    padding: 2em;
-    width: 21em;
-    margin: 1em auto 0 auto;
-    border-radius: 0.25em;
-    box-shadow: inset 0px 0px 3px black;
-  }
-  ```
-
-  </details>
 
 - Make sure to `import` your `Calculator` component into `App.js`!
 
 ### Step 2
 
-Set up the initial state of your `Calculator` component with `useState`. Don't forget you'll need to import it from React!
+Set up the initial state of your `Calculator` component with `useState`. *HINT*: Don't forget - you'll need to import it from React!
 
 - What state will you need to track?
 - What values should those state items start with?
@@ -151,7 +48,7 @@ Set up the initial state of your `Calculator` component with `useState`. Don't f
 
 ### Step 3
 
-You will want to trigger a function when the values in your text inputs change. You can capture these values by writing a function in your `Calaculator` component that fires within an anonymous function `() =>` in the input's `onChange` property. Let's say I have a text input tracking my first number.
+You will want to trigger a function when the values in your text inputs change. You can capture these values by writing a function in your `Calculator` component that fires within an anonymous function `() =>` in the input's `onChange` property. Let's say I have a text input tracking my first number.
 
 ```jsx
 <input
@@ -177,9 +74,9 @@ const handleNum = (e, num) => {
 }
 ```
 
-> Hint: Remember to use proper state setting functions for state variables. 
+> Hint: Remember to use proper state-setting functions for state variables (they're the only things that can directly affect that state!). 
 >
-> For example, if I had a useState() variable `const [result, setResult] = useState('')`, I would update its state with something like the following: `setResult(someNewStringValue)`
+> For example, if I had a useState() variable `const [result, setResult] = useState('')`, I would update its state with something like the following: `setResult(someValue)`
 
 If you decided to use buttons for your calculator, you probably want to use `onClick` instead of `onChange`, but the concepts are the same! Here is some additional documentation on React's forms and event handling:
 
@@ -188,7 +85,7 @@ If you decided to use buttons for your calculator, you probably want to use `onC
 
 ### Step 4
 
-Once you've got your event handlers set up to capture the nubmers from your **text** inputs, you'll need to create function that calculates the final result when the `=` button is clicked. Example:
+Once you've got your event handlers set up to capture the numbers from your **text** inputs, you'll need to create function that calculates the final result when the `=` button is clicked. Example:
 
 ```js
 const handleSolution = () => {
@@ -206,14 +103,14 @@ const handleSolution = () => {
 // And set the state of num1 to the result that was just calculated
 
 ...
+
 <button onClick={() => handleSolution()}>=</button>
 }
 ```
 
 ### Step 5
 
-Once the state of the `result` has been set, React will re-render the whole
-component. Make sure you have a place in your JSX that displays the result!
+Once the state of the `result` has been set, React will re-render the whole component. Make sure you have a place in your JSX that displays the result!
 
 ## Requirements
 - `state` used with `useState` to create the initial state for the `Calculator` component
