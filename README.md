@@ -4,17 +4,14 @@
 
 ## Overview
 
-Now, it's time for you to check back on everything! You will be building a
-calculator with React, and only minimal instructions have been provided for you to really think about what's happening.
+In this deliverable, you'll be building a calculator with React, and only minimal instructions have been provided for you to really think about what's happening.
 
-At first, your calculator will just add 2 numbers
-together when they are typed in. For the bonus, you might decide to get more
-creative.
+At first, your calculator will just add 2 numbers together when they are typed in. For the bonus, you might decide to get more creative.
 
 ## Getting Started
 
 - `Fork` and `clone` this repository and `cd` into the new directory
-- Like usual, use `npx create-react-app hooks-calculator` to make a new project.
+- Use `npx create-react-app hooks-calculator` to make a new project.
 - `cd` into your new React app
 - Create a `components` folder within the `src` directory to store any components we'll create in this deliverable
 - `npm start` to start up your new React app
@@ -232,10 +229,4 @@ component. Make sure you have a place in your JSX that displays the result!
 
 ## Submission Guidelines
 
-- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-4-26/template_pull_request)
-
-## Resources
-
-- [React State Intro Lesson](https://github.com/SEI-R-4-26/u2_lesson_react_state_intro)
-- [React Todo List Lab](https://github.com/SEI-R-4-26/u2_lab_react_todos)
-- [React Lifecycle Methods Lesson](https://github.com/SEI-R-4-26/u2_lesson_react_lifecycle)
+- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-7-26/template_pull_request)
