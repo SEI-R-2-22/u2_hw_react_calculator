@@ -126,4 +126,4 @@ Once the state of the `result` has been set, React will re-render the whole comp
 
 ## Submission Guidelines
 
-- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-7-26/template_pull_request)
+- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-11-8/template_pull_request)
