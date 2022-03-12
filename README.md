@@ -1,4 +1,4 @@
-# React Calculator With Hooks
+# React Calculator
 
 ![calc](https://cdn.dribbble.com/users/2184773/screenshots/4516857/calculator.gif)
 
@@ -19,7 +19,7 @@ At first, your calculator will just add 2 numbers together when they are typed i
 
 ### Step 1
 
-- In the **Calculator.jsx** file, create your `Calculator` as a functional component.
+- In the **Calculator.jsx** file, create your `Calculator` as a component.
 - Add the following **JSX** to the *return* of your Calculator component:
 
 ```jsx
