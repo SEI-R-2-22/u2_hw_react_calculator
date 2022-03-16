@@ -19,7 +19,7 @@ At first, your calculator will just add 2 numbers together when they are typed i
 
 ### Step 1
 
-- In the **Calculator.jsx** file, create your `Calculator` as a component.
+- In the provided **Calculator.jsx** file, create your `Calculator` as a component.
 - Add the following **JSX** to the *return* of your Calculator component:
 
 ```jsx
@@ -126,4 +126,4 @@ Once the state of the `result` has been set, React will re-render the whole comp
 
 ## Submission Guidelines
 
-- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-11-8/template_pull_request)
+- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-2-22/template_pull_request)
