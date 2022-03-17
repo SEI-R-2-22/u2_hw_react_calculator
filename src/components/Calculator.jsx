@@ -22,16 +22,33 @@ function Calculator(props) {
         else if(event.target.value === '/'){setOperation('/')}
     }
 
+    // const handleSolution = () => {
+    //     if(firstInput && secondInput){
+    //         if(operation === '+'){
+    //             setResult(parseInt(firstInput) + parseInt(secondInput))
+    //         }else if(operation === '-'){
+    //             setResult(parseInt(firstInput) - parseInt(secondInput))
+    //         }else if(operation === '*'){
+    //             setResult(parseInt(firstInput) * parseInt(secondInput))
+    //         }else if(operation === '/'){
+    //             setResult(parseInt(firstInput) / parseInt(secondInput))
+    //         }
+            
+    //         setFirstInput("")
+    //         setSecondInput("")
+    //     }
+    // }
+
     const handleSolution = () => {
         if(firstInput && secondInput){
             if(operation === '+'){
-                setResult(parseInt(firstInput) + parseInt(secondInput))
+                return(parseInt(firstInput) + parseInt(secondInput))
             }else if(operation === '-'){
-                setResult(parseInt(firstInput) - parseInt(secondInput))
+                return(parseInt(firstInput) - parseInt(secondInput))
             }else if(operation === '*'){
-                setResult(parseInt(firstInput) * parseInt(secondInput))
+                return(parseInt(firstInput) * parseInt(secondInput))
             }else if(operation === '/'){
-                setResult(parseInt(firstInput) / parseInt(secondInput))
+                return(parseInt(firstInput) / parseInt(secondInput))
             }
             
             setFirstInput("")
@@ -43,7 +60,6 @@ function Calculator(props) {
         <div className="container">
             <div className="add">
                 <input type="text" name="firstInput" placeholder="Enter a number" value={firstInput} onChange={(event) => handleNum(event, firstInput)}/>              
-                {/* <span>+</span>                */}
                 <select name="operation" onChange={(event) => handleOperation(event)}>
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -53,7 +69,7 @@ function Calculator(props) {
                 <input type="text" name="secondInput" placeholder="Enter a number" value={secondInput} onChange={(event) => handleNum(event, secondInput)}/>
                 <button onClick={handleSolution}>=</button>
             </div>
-            <h3 className="results">{result}</h3>
+            <h3 className="results">{handleSolution()}</h3>
         </div>
     );
 }
