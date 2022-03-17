@@ -13,6 +13,18 @@ const Calculator = () => {
     }
   }
 
+  const handleSolution = () => {
+    // Return early if num1 or num2 is an empty string
+    if (!num1.length || !num2.length) {
+      alert('Please enter a number')
+      return
+    }
+    const sum = parseInt(num1) + parseInt(num2)
+    setResult(sum)
+    setNum1('')
+    setNum2('')
+  }
+
   return (
     <div className="container">
       <div className="add">
@@ -31,9 +43,9 @@ const Calculator = () => {
           value={num2}
           onChange={(e) => handleNum(e, 'num2')}
         />
-        <button>=</button>
+        <button onClick={handleSolution}>=</button>
       </div>
-      <h3 className="results">Results go here!</h3>
+      <h3 className="results">{result}</h3>
     </div>
   )
 }
