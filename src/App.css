@@ -51,6 +51,13 @@ button {
   justify-content: space-around;
 }
 
+.operators {
+  padding: 0px 8px 25px 6px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .add > span {
   font-size: 2em;
   font-weight: bold;
