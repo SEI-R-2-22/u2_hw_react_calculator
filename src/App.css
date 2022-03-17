@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(136, 255, 182);
+  background-color: #dda0bf;
 }
 
 .App {
@@ -17,10 +17,18 @@ button {
 
 button,
 h1 {
-  background-color: rgb(37, 37, 37);
+  background-color: #a0dda0;
   color: white;
   font-weight: bold;
   box-shadow: 0px 0px 5px black;
+}
+
+#operation {
+  background-color: #ae59a4;
+}
+
+#operation:hover {
+  background-color: #bfa0dd;
 }
 
 button:active {
@@ -40,6 +48,7 @@ h1 {
   padding: 0.5em;
   margin-top: 0;
   margin-bottom: 2em;
+  color: #ae59a4;
 }
 
 button {
@@ -59,7 +68,7 @@ button {
 .container {
   width: 30em;
   margin: 0 auto;
-  background-color: rgb(173, 208, 255);
+  background-color: #dddda0;
   padding: 2em;
   border-radius: 0.5em;
   box-shadow: 0px 0px 5px black;
