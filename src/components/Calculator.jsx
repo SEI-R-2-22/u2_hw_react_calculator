@@ -46,7 +46,7 @@ const Calculator = () => {
           name="num2"
           placeholder="Enter your second number"
           value={num2}
-          onChange={(e) => handleNum(e, 'num2')}
+          onChange={handleNum}
         />
         <button onClick={handleSolution}>=</button>
       </div>
