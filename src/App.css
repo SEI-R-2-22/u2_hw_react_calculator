@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(136, 255, 182);
+  background-color: #3b4a63;
 }
 
 .App {
@@ -18,7 +18,7 @@ button {
 button,
 h1 {
   background-color: rgb(37, 37, 37);
-  color: white;
+  color: #6e747d;
   font-weight: bold;
   box-shadow: 0px 0px 5px black;
 }
