@@ -5,8 +5,8 @@ const Calculator = () => {
   const [num2, setNum2] = useState('')
   const [result, setResult] = useState('')
 
-  const handleNum = (e, num) => {
-    if (num === 'num1') {
+  const handleNum = (e) => {
+    if (e.target.name === 'num1') {
       setNum1(e.target.value)
     } else {
       setNum2(e.target.value)
@@ -15,8 +15,13 @@ const Calculator = () => {
 
   const handleSolution = () => {
     // Return early if num1 or num2 is an empty string
-    if (!num1.length || !num2.length) {
-      alert('Please enter a number')
+    if (!num1.trim().length || !num2.trim().length) {
+      alert('Please enter a number. Inputs cannot be blank.')
+      return
+    }
+    // Return early if the user enters characters other than numbers
+    if (!num1.match(/^[0-9]+$/) || !num2.match(/^[0-9]+$/)) {
+      alert('Please enter a valid number')
       return
     }
     const sum = parseInt(num1) + parseInt(num2)
@@ -33,7 +38,7 @@ const Calculator = () => {
           name="num1"
           placeholder="Enter your first number"
           value={num1}
-          onChange={(e) => handleNum(e, 'num1')}
+          onChange={handleNum}
         />
         <span>+</span>
         <input
