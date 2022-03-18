@@ -9,27 +9,32 @@ const Calculator = (props) => {
         return parseInt(num)
     }
     const handleNum = (e,num) => {
-
-        
         // console.log(e.target.value)
         if (num === num1){
-            num1=e.target.value
+            num1=convertToInt(e.target.value)
             // num1.parseInt()
-            convertToInt(num1)
+            
             // console.log(num1)
         }else {
 
-            num2=e.target.value
+            num2=convertToInt(e.target.value)
             convertToInt(num2)
-            console.log(num2)
+            // console.log(num2)
         }
         // console.log(num1)
         // console.log(num2)
     }
+ 
     const handleSolution = (num1, num2) => {
+        // let n1 = convertToInt(num1)
+        // let n2 = convertToInt(num2)
         const sum = num1 + num2
-        
         setResult(sum)
+        
+
+        
+        
+        console.log(result)
     }
 
     return (
@@ -38,19 +43,19 @@ const Calculator = (props) => {
                 <input type="text" 
                     placeholder="Enter a number" 
                     name="num1"
-                    value={result}
+                    value={num1}
                     onChange={(e) => handleNum(e, 'num1')}
                 />
                 <span>+</span>
                 <input type="text" 
                     placeholder="Enter a number" 
                     name="num2"
-                    value={result}
+                    value={num2}
                     onChange={(e) => handleNum(e, 'num2')}
                 />
-                <button onClick={handleSolution}>=</button>
+                <button onClick={() => handleSolution()}>=</button>
             </div>
-            <h3 className="results">Results go here!</h3>
+            <h3 className="results">{result}</h3>
         </div>
 
     )
