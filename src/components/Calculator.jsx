@@ -4,29 +4,49 @@ const Calculator = () => {
   const [firstNumber, setFirstNumber] = useState('')
   const [secondNumber, setSecondNumber] = useState('')
   const [result, setResult] = useState('')
-  // const [someState, setSomeState] = useState({firstNumber: '', secondNumber: '', result: ''})
+  const [buttonOp, setButtonOp] = useState('+')
 
   const handleNum = (e, num) => {
-    // console.log(num)
-    // console.log(e.target.value)
-    // if (num === 'firstNumber') {
-    //   setFirstNumber(e.target.value)
-    // } else if (num === 'secondNumber') {
-    //   setSecondNumber(e.target.value)
-    // }
     num === 'firstNumber' ? setFirstNumber(e.target.value) : setSecondNumber(e.target.value) //tried a ternany, it worked! 
   }
 
-  function handleSolution() {
-    if (firstNumber && secondNumber !== '') {
-      setResult((parseInt(firstNumber) + parseInt(secondNumber)))
-      setFirstNumber('')
-      setSecondNumber('')
+  const handleSolution = (first, second, op) => {
+
+    let firstX = parseInt(first)
+    let secondX = parseInt(second)
+    if (firstX !== '' && secondX !== '' ) {
+      let maths = (`${firstX}${op}${secondX}`)
+      setResult(eval(maths))
+    } 
+    setFirstNumber('')
+    setSecondNumber('')
+    // if (firstNumber && secondNumber !== '' && buttonOp === '+') {
+    //   setResult((parseInt(firstNumber) + parseInt(secondNumber)))
+    // } else if (firstNumber && secondNumber !== '' && buttonOp === '-') {
+    //   setResult((parseInt(firstNumber) - parseInt(secondNumber)))
+    // } else if (firstNumber && secondNumber !== '' && buttonOp === '*') {
+    //   setResult((parseInt(firstNumber) * parseInt(secondNumber)))
+    // } else if (firstNumber && secondNumber !== '' && buttonOp === '/') {
+    //   setResult((parseInt(firstNumber) / parseInt(secondNumber)))
+    // } 
+    //^^^^^ Tried this first, worked, but looked too thicc. 
+  }
+
+  const changeOp = () => {
+    if (buttonOp === '+') {
+      setButtonOp('-')
+    } else if (buttonOp === '-') {
+      setButtonOp('*')
+    } else if (buttonOp === '*') {
+      setButtonOp('/')
+    } else {
+      setButtonOp('+')
     }
   }
 
   return (
     <div className="container">
+      <h3>Click on operator button to change operators</h3>
       <div className="add">
         <input 
           type="text"
@@ -35,7 +55,8 @@ const Calculator = () => {
           value={firstNumber}
           onChange={(e) => handleNum(e, 'firstNumber')}
         />
-        <span>+</span>
+        {/* <span>+</span> */}
+        <button onClick={() => changeOp()} >{buttonOp}</button>
         <input 
           type="text"
           name="secondNumber" 
@@ -43,7 +64,7 @@ const Calculator = () => {
           value={secondNumber}
           onChange={(e) => handleNum(e, 'secondNumber')}
         />
-        <button onClick={() => handleSolution()}>=</button>
+        <button onClick={() => handleSolution(firstNumber, secondNumber, buttonOp)}>=</button>
       </div>
       <h3 className="results">{result}</h3>
     </div>
