@@ -16,8 +16,18 @@ const Calculator = () => {
         console.log(e.target.value)
         setNum2(e.target.value)
     }
-    const handleSolution = () => {
-        let sum
+    const handleSolution = (props) => {
+        
+        if (num1 || num2 && !'') {
+            let sum = 0
+            const numOne = parseInt(num1)
+            const numTwo = parseInt(num2)
+            sum = numOne + numTwo
+            let sumText = sum.toString()
+            setResult(sumText)
+            setNum1('')
+            setNum2('')
+        }
     } 
 
     return(
@@ -40,7 +50,7 @@ const Calculator = () => {
     />
     <button onClick={() => handleSolution()}>=</button>
     </div>
-    <h3 className="results">Results go here!</h3>
+    <h3 className="results">{ result }</h3>
     </div>
 )
 }
