@@ -15,8 +15,8 @@ const Calculator = () => {
     let firstX = parseInt(first)
     let secondX = parseInt(second)
     if (firstX !== '' && secondX !== '' ) {
-      let maths = (`${firstX}${op}${secondX}`)
-      setResult(eval(maths))
+      let maths = (`${firstX}${op}${secondX}`) //Template literals into one string 
+      setResult(eval(maths)) //eval does maths to the one string
     } 
     setFirstNumber('')
     setSecondNumber('')
@@ -29,6 +29,8 @@ const Calculator = () => {
     // } else if (firstNumber && secondNumber !== '' && buttonOp === '/') {
     //   setResult((parseInt(firstNumber) / parseInt(secondNumber)))
     // } 
+    // setFirstNumber('')
+    // setSecondNumber('')
     //^^^^^ Tried this first, worked, but looked too thicc. 
   }
 
