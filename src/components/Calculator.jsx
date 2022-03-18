@@ -15,7 +15,7 @@ const Calculator = (props) =>{
 
       }
       const handleSolution=()=>{
-          if(!isNaN(parseInt(num1)) && !isNaN(parseInt(num2)) ){
+          if(!isNaN(num1) && !isNaN(num2) && (num1.length > 0 && num2.length > 0)){
 
             if(op === "+" ) {setSum(parseInt(num1)+parseInt(num2))}
             console.log("afterplus before -")
@@ -28,7 +28,9 @@ const Calculator = (props) =>{
             setNum1("")
             setNum2("")
         
-    }}
+    } else{alert("This is not a number")}
+
+}
             
       
 
