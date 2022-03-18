@@ -27,9 +27,9 @@ const Calculator = (props) => {
         // console.log(num2)
     }
     const handleSolution = (num1, num2) => {
-        const sum = parseInt(num1 + num2)
+        const sum = num1 + num2
         
-        console.log(setResult(sum))
+        setResult(sum)
     }
 
     return (
