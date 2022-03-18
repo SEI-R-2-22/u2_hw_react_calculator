@@ -3,7 +3,7 @@ import { useState } from 'react'
 const Calculator = () => {
   const [firstNum, setFirstNum] = useState('')
   const [secondNum, setSecondNum] = useState('')
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState(0)
 
   const handleFirstNum = (e) => {
     setFirstNum(e.target.value)
