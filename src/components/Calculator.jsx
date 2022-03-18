@@ -1,23 +1,27 @@
+import { useState } from "react"
+
 const Calculator = (props) => {
-    let num1
-    let num2
+    const [num1, setNum1] = useState("")
+    const [num2, setNum2] = useState("")
+    const [results, setResults] = useState("");
     
     const handleNum = (e, num) => {
         console.log(num)
         console.log(e.target.value)
-        if(num1) {
-            num1 = e.target.value
+        if(num === 'num1') {
+            setNum1(e.target.value)
         } else {
-            num2 = e.target.value
+            setNum2(e.target.value)
         }
     }
 
-    const setResult = () => {
+    const handleResult = () => {
+        console.log(num1, num2)
         if(num1 !== "" && num2 !== "") {
             let sum = (parseInt(num1) + parseInt(num2))
-            sum = setResult
-            num1 = ""
-            num2 = ""
+            setResults(sum)
+            setNum1('')
+            setNum2('')
         }
     }
 
@@ -28,12 +32,18 @@ const Calculator = (props) => {
                     type="number"
                     name="num1" 
                     placeholder="Enter a number"
-                    value={ props.num }
+                    value={ num1 }
                     onChange={(e) => handleNum(e, 'num1')} 
                     />
                 <span>+</span>
-                <input type="number" placeholder="Enter a number" />
-                <button onClick={(sum) => setResult()}>=</button>
+                <input 
+                    type="number"
+                    name="num2" 
+                    placeholder="Enter a number"
+                    value={ num2 }
+                    onChange={(e) => handleNum(e, 'num2')} 
+                    />
+                <button onClick={() => handleResult()}>=</button>
                 
             </div>
             <h3 className="results">Results go here!</h3>

@@ -4,14 +4,13 @@ import { useState } from 'react'
 
 const App = () => {
   
-  const [num, handleNum] = useState("");
   const [result, setResult] = useState("");
 
   return (
     <div className="App">
       <h1>React Calculator</h1>
 
-      <Calculator/>
+      <Calculator />
     </div>
   )
 }
