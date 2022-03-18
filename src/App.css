@@ -54,6 +54,7 @@ button {
 .add > span {
   font-size: 2em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .container {
