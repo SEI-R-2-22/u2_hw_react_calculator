@@ -20,15 +20,15 @@ const Calculator =(props) => {
     }
 
     const handleSolution = () => {
-        if (first !== '' && second !=='') {
+        if (!isNaN(first) && !isNaN(second) && first !== '' && second !== '') {
             if (operator === '+') {
-            setRes(parseInt(first) + parseInt(second))}
+                setRes(parseInt(first) + parseInt(second))}
             else if (operator === '-'){
-            setRes(parseInt(first) - parseInt(second))}
+                setRes(parseInt(first) - parseInt(second))}
             else if (operator === '*'){
-            setRes(parseInt(first) * parseInt(second))}
+                setRes(parseInt(first) * parseInt(second))}
             else if (operator === '/'){ 
-            setRes(parseInt(first) / parseInt(second))}
+                setRes(parseInt(first) / parseInt(second))}
             setFirst('')
             setSecond('')
         }
