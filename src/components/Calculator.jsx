@@ -53,9 +53,9 @@ const Calculator = (props) => {
         <div className="container">
             <div className="add">
                 <Input name="num1" value={num1} handleNum={handleNum} />
-                <span onClick={() => handleOperator()}>{operator}</span>
+                <span onClick={handleOperator}>{operator}</span>
                 <Input name="num2" value={num2} handleNum={handleNum} />
-                <button onClick={() => handleSolutions()}>=</button>
+                <button onClick={handleSolutions}>=</button>
             </div>
             <h3 className="results">{results}</h3>
         </div>
