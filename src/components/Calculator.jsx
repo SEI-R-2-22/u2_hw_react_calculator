@@ -18,7 +18,12 @@ const Calculator = ({
     }
   }
   const handleSolution = () => {
-    if (isNaN(firstNumber) || isNaN(secondNumber)) {
+    if (
+      isNaN(firstNumber) === true ||
+      isNaN(secondNumber) === true ||
+      firstNumber === '' ||
+      secondNumber === ''
+    ) {
       setTotalNumber('Please enter two numbers')
     } else if (isNaN(firstNumber) === false && isNaN(secondNumber) === false) {
       switch (sign) {
