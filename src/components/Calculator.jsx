@@ -16,7 +16,7 @@ function Calculator(props) {
     }
 
     const handleSolution = () => {
-        if(firstInput && secondInput){
+        if((!isNaN(firstInput) && !isNaN(secondInput))){
             if(operation === '+'){
                 return(parseInt(firstInput) + parseInt(secondInput))
             }else if(operation === '-'){
@@ -29,6 +29,8 @@ function Calculator(props) {
             
             setFirstInput("")
             setSecondInput("")
+        }else{
+            alert("Please input a number.")
         }
     }
 
@@ -45,7 +47,7 @@ function Calculator(props) {
                 <input type="text" name="secondInput" placeholder="Enter a number" value={secondInput} onChange={(event) => handleNum(event)}/>
                 <button onClick={handleSolution}>=</button>
             </div>
-            <h3 className="results">{handleSolution()}</h3>
+            <h3 className="results"></h3>
         </div>
     );
 }
