@@ -25,6 +25,12 @@ const Calculator = (props) => {
     
     const handleNum = (e, num) => num === "num1" ? setNum1(e.target.value) : setNum2(e.target.value)
 
+    const resetCalculator = () => {
+        setNum1("")
+        setNum2("")
+        setResults("")
+    }
+
     const handleOperator = () => {
         operator === "+" ? setOperator("-")
         : operator === "-" ? setOperator("*")
@@ -46,6 +52,8 @@ const Calculator = (props) => {
             : operator === "^" ? toPowerNum()
             : setOperator("+")
         :alert("Enter a number")
+  
+       
     }
 
 
@@ -56,8 +64,11 @@ const Calculator = (props) => {
                 <span onClick={handleOperator}>{operator}</span>
                 <Input name="num2" value={num2} handleNum={handleNum} />
                 <button onClick={handleSolutions}>=</button>
+                <button onClick={resetCalculator}>C</button>
             </div>
+           
             <h3 className="results">{results}</h3>
+            
         </div>
     )
 }
