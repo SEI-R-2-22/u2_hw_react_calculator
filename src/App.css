@@ -51,13 +51,14 @@ button {
   justify-content: space-around;
 }
 
-.add > span {
-  font-size: 2em;
+.operator {
+  font-size: 1em;
   font-weight: bold;
+  width: 2em
 }
 
 .container {
-  width: 30em;
+  width: 40em;
   margin: 0 auto;
   background-color: rgb(173, 208, 255);
   padding: 2em;
