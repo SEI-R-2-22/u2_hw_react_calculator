@@ -8,14 +8,18 @@ const App = () => {
   const [FirstNum, setFirstNum] = useState(0)
   const [SecondNum, setSecondNum] = useState(0)
   const [result, setResult] = useState('')
+  const [operators, setOperators] = useState('+')
+  const [increment, setIncrement] = useState(0)
 
+  //Uncomment to use equal sign to get result.
   // useEffect(() => {
-  //   returnSum()
-  // }, [SecondNum, FirstNum])
+  //   clearInput()
+  // }, [result])
 
+  //comment out for equal sign for result.
   useEffect(() => {
-    clearInput()
-  }, [result])
+    returnSum()
+  }, [FirstNum, SecondNum, operators])
 
   const handleFirstInput = (e) => {
     if (isNaN(e.target.value)) {
@@ -43,7 +47,31 @@ const App = () => {
     if (FirstNum === '' || SecondNum === '') {
       return
     }
-    setResult(parseInt(FirstNum) + parseInt(SecondNum))
+    switch (operators) {
+      case '+':
+        setResult(parseInt(FirstNum) + parseInt(SecondNum))
+        break
+      case '-':
+        setResult(parseInt(FirstNum) - parseInt(SecondNum))
+        break
+      case '*':
+        setResult(parseInt(FirstNum) * parseInt(SecondNum))
+        break
+      case '/':
+        setResult(parseInt(FirstNum) / parseInt(SecondNum))
+        break
+    }
+  }
+
+  //click operator to change operation
+  const changeOperator = () => {
+    if (increment < 3) {
+      setIncrement((prevState) => prevState + 1)
+      setOperators(operator[increment])
+    } else {
+      setIncrement(0)
+      setOperators(operator[increment])
+    }
   }
 
   return (
@@ -57,6 +85,8 @@ const App = () => {
         clearInput={clearInput}
         FirstNum={FirstNum}
         SecondNum={SecondNum}
+        changeOperator={changeOperator}
+        operators={operators}
       />
 
       {/* Your <Calculator /> component here */}
