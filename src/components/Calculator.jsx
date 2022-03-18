@@ -36,7 +36,8 @@ const Calculator = (props) => {
     
     const handleSolutions = () => {
         num1!== "" && num2 !=="" ? 
-            isNaN(num1) || isNaN(num2) ? alert("Enter a number")
+            isNaN(num1) || isNaN(num2) ? 
+            alert("Enter a number")
             : operator === "+" ? sumNum()
             : operator === "-" ? minusNum()
             : operator === "*" ? multiplyNum()
@@ -45,7 +46,7 @@ const Calculator = (props) => {
             : operator === "^" ? toPowerNum()
             : setOperator("+")
         :alert("Enter a number")
-        }
+    }
 
 
     return (
