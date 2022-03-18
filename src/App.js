@@ -11,10 +11,11 @@ const App = () => {
   const [operators, setOperators] = useState('+')
   const [increment, setIncrement] = useState(0)
 
-  //Uncomment to use equal sign to get result.
-  // useEffect(() => {
-  //   clearInput()
-  // }, [result])
+  //clear input after 5 second of result.
+  useEffect(() => {
+    setTimeout(clearInput, 5000)
+    // clearInput()
+  }, [result])
 
   //comment out for equal sign for result.
   useEffect(() => {
@@ -38,6 +39,7 @@ const App = () => {
     }
   }
 
+  //clear input after result is shown
   const clearInput = (e) => {
     setFirstNum('')
     setSecondNum('')
