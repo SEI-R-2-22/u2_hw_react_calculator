@@ -46,12 +46,27 @@ button {
   padding: 0.5em 1.5em;
 }
 
-.add {
+.add, .subtract, .multiply, .divide {
   display: flex;
   justify-content: space-around;
 }
 
 .add > span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.subtract > span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.multiply > span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.divide > span {
   font-size: 2em;
   font-weight: bold;
 }

@@ -17,9 +17,27 @@ const Calculator = () => {
         }
     }
 
-    const handleSolution = () => {
+    const handleSolutionAdd = () => {
         if (num1 !== '' && num2 !== '') {
             setResults(parseInt(num1) + parseInt(num2))
+        }
+    }
+
+    const handleSolutionSub = () => {
+        if (num1 !== '' && num2 !== '') {
+            setResults(parseInt(num1) - parseInt(num2))
+        }
+    }
+
+    const handleSolutionMul = () => {
+        if (num1 !== '' && num2 !== '') {
+            setResults(parseInt(num1) * parseInt(num2))
+        }
+    }
+
+    const handleSolutionDiv = () => {
+        if (num1 !== '' && num2 !== '') {
+            setResults(parseInt(num1) / parseInt(num2))
         }
     }
 
@@ -30,7 +48,6 @@ const Calculator = () => {
                 type="number"
                 name="num1"
                 placeholder="Enter your first number"
-                // value={someStateVariable}
                 onChange={(e) => handleNum(e, 'num1')}
             />
                 <span>+</span>
@@ -38,11 +55,66 @@ const Calculator = () => {
                 type="number"
                 name="num2"
                 placeholder="Enter your second number"
-                // value={someStateVariable}
                 onChange={(e) => handleNum(e, 'num2')}
             />
-                <button onClick={() => handleSolution()}>=</button>
+                <button onClick={() => handleSolutionAdd()}>=</button>
             </div>
+
+
+            <div className="subtract">
+            <input
+                type="number"
+                name="num1"
+                placeholder="Enter your first number"
+                onChange={(e) => handleNum(e, 'num1')}
+            />
+                <span>-</span>
+            <input
+                type="number"
+                name="num2"
+                placeholder="Enter your second number"
+                onChange={(e) => handleNum(e, 'num2')}
+            />
+                <button onClick={() => handleSolutionSub()}>=</button>
+            </div>
+
+
+            <div className="multiply">
+            <input
+                type="number"
+                name="num1"
+                placeholder="Enter your first number"
+                onChange={(e) => handleNum(e, 'num1')}
+            />
+                <span>*</span>
+            <input
+                type="number"
+                name="num2"
+                placeholder="Enter your second number"
+                onChange={(e) => handleNum(e, 'num2')}
+            />
+                <button onClick={() => handleSolutionMul()}>=</button>
+            </div>
+
+
+            <div className="divide">
+            <input
+                type="number"
+                name="num1"
+                placeholder="Enter your first number"
+                onChange={(e) => handleNum(e, 'num1')}
+            />
+                <span>/</span>
+            <input
+                type="number"
+                name="num2"
+                placeholder="Enter your second number"
+                onChange={(e) => handleNum(e, 'num2')}
+            />
+                <button onClick={() => handleSolutionDiv()}>=</button>
+            </div>
+
+
             <h3 className="results">{results}</h3>
         </div>
     )
