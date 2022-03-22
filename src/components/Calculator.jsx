@@ -4,8 +4,7 @@ const Calculator = () => {
   const [num1, setNum1] = useState('')
   const [num2, setNum2] = useState('')
   const [operator, setOperator] = useState('+')
-  let resultsElement = document.querySelector('.results')
-  let results
+  const [results, setResults] = useState('')
 
   const handleNum = (e, num) => {
     if (num === 'num1') {
@@ -18,17 +17,13 @@ const Calculator = () => {
   const handleSolution = () => {
     if (num1 && num2) {
       if (operator === '+') {
-        results = parseInt(num1) + parseInt(num2)
-        resultsElement.innerHTML = results
+        setResults(parseInt(num1)+parseInt(num2))
       } else if (operator === '-') {
-        results = parseInt(num1) - parseInt(num2)
-        resultsElement.innerHTML = results
+        setResults(parseInt(num1) - parseInt(num2))
       } else if (operator === '*') {
-        results = parseInt(num1) * parseInt(num2)
-        resultsElement.innerHTML = results
+        setResults(parseInt(num1) * parseInt(num2))
       } else if (operator === '/') {
-        results = parseInt(num1) / parseInt(num2)
-        resultsElement.innerHTML = results
+        setResults(parseInt(num1) / parseInt(num2))
       }
     }
   }
@@ -52,8 +47,8 @@ const Calculator = () => {
           <input 
             type="number" 
             name='num1' 
-            placeholder="Enter your first number" 
-            value={num1}
+            placeholder="Enter your first number"  
+            value={num1} 
             onChange={(e) => handleNum(e, 'num1')}
           />
           <button onClick={() => handleChange()}>{operator}</button>
@@ -66,7 +61,7 @@ const Calculator = () => {
           />
           <button onClick={() => handleSolution()}>=</button>
         </div>
-        <h3 className="results"></h3>
+        <h3 className="results">{results}</h3>
       </div>
     </div>
   )
